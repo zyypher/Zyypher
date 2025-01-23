@@ -6,10 +6,8 @@ import {
   FaTwitter,
   FaYoutube,
   FaSnapchat,
-  FaWhatsapp,
   FaPinterest,
   FaTiktok,
-  FaReddit,
   FaPhone,
 } from "react-icons/fa";
 
