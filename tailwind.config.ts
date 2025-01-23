@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'], // Use Poppins as the default font
+      },
       colors: {
         black: "#000",
         white: "#fff",
