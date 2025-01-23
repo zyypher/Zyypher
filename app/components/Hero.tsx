@@ -28,15 +28,16 @@ const HeroSection = () => {
             builds software.
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          Empowering ideas, crafting innovations <br /> where creativity meets technology.
+            Empowering ideas, crafting innovations <br /> where creativity meets
+            technology.
           </p>
-          <div className="flex space-x-4">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg">
-              Get Started
-            </button>
-            <button className="bg-transparent border border-gray-300 hover:border-white hover:bg-white hover:text-black text-gray-300 font-bold py-3 px-6 rounded-lg shadow-lg">
-              Learn More
-            </button>
+          <div className="mt-8">
+            <a
+              href="#contact"
+              className="inline-block bg-white text-black text-center font-medium text-lg py-1 px-4 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all duration-200"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </div>
