@@ -1,7 +1,8 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/85 border-b border-gray-800 shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo Section */}
-        <a
+        <Link
           href="/"
           className="flex items-center space-x-2 text-white hover:text-gray-300 transition"
         >
@@ -21,46 +22,40 @@ const Navbar = () => {
             alt="Main logo"
           />
           <span className="font-semibold text-lg">ZYYPHER</span>
-        </a>
+        </Link>
 
         {/* Navigation Links for Desktop */}
         <div className="hidden md:flex space-x-6">
-          <a
-            href="/features"
+          <Link
+            href="/"
             className="text-sm font-medium text-gray-400 hover:text-white transition"
           >
-            Features
-          </a>
-          <a
-            href="/resources"
+            Home
+          </Link>
+          <Link
+            href="/about"
             className="text-sm font-medium text-gray-400 hover:text-white transition"
           >
-            Resources
-          </a>
-          <a
-            href="/support"
+            About
+          </Link>
+          <Link
+            href="/portfolio"
             className="text-sm font-medium text-gray-400 hover:text-white transition"
           >
-            Support
-          </a>
-          <a
-            href="/enterprise"
+            Portfolio
+          </Link>
+          <Link
+            href="/services"
             className="text-sm font-medium text-gray-400 hover:text-white transition"
           >
-            Enterprise
-          </a>
-          <a
-            href="/pricing"
-            className="text-sm font-medium text-gray-400 hover:text-white transition"
-          >
-            Pricing
-          </a>
-          <a
+            Services
+          </Link>
+          <Link
             href="/contact"
             className="text-sm font-medium text-gray-400 hover:text-white transition"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Menu */}
@@ -87,9 +82,10 @@ const Navbar = () => {
           </button>
         </div>
 
+
         {/* Login & Signup for Desktop */}
         <div className="hidden md:flex space-x-4">
-          <a
+          {/* <a
             href="/login"
             className="text-sm font-medium text-gray-400 hover:text-white transition"
           >
@@ -100,50 +96,44 @@ const Navbar = () => {
             className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-lg shadow hover:bg-gray-200 transition"
           >
             Sign Up
-          </a>
+          </a> */}
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-black/90 backdrop-blur-md md:hidden">
-          <a
-            href="/features"
+          <Link
+            href="/"
             className="block px-4 py-2 text-gray-400 hover:text-white"
           >
-            Features
-          </a>
-          <a
-            href="/resources"
+            Home
+          </Link>
+          <Link
+            href="/about"
             className="block px-4 py-2 text-gray-400 hover:text-white"
           >
-            Resources
-          </a>
-          <a
-            href="/support"
+            About
+          </Link>
+          <Link
+            href="/portfolio"
             className="block px-4 py-2 text-gray-400 hover:text-white"
           >
-            Support
-          </a>
-          <a
-            href="/enterprise"
+            Portfolio
+          </Link>
+          <Link
+            href="/services"
             className="block px-4 py-2 text-gray-400 hover:text-white"
           >
-            Enterprise
-          </a>
-          <a
-            href="/pricing"
-            className="block px-4 py-2 text-gray-400 hover:text-white"
-          >
-            Pricing
-          </a>
-          <a
+            Services
+          </Link>
+          <Link
             href="/contact"
             className="block px-4 py-2 text-gray-400 hover:text-white"
           >
             Contact
-          </a>
-          <a
+          </Link>
+          {/* <a
             href="/login"
             className="block px-4 py-2 text-gray-400 hover:text-white"
           >
@@ -154,7 +144,7 @@ const Navbar = () => {
             className="block px-4 py-2 text-white bg-blue-600 text-center rounded-md mx-4 mt-2"
           >
             Sign Up
-          </a>
+          </a> */}
         </div>
       )}
     </nav>
