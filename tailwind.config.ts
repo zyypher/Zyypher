@@ -10,11 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'], // Use Poppins as the default font
+        sans: ['Poppins', 'sans-serif'],
       },
       colors: {
         black: "#000",
         white: "#fff",
+        lightGreen: "#e2ff04",
         gray: {
           400: "#9CA3AF",
           800: "#1F2937",
