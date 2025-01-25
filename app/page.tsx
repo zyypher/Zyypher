@@ -1,3 +1,4 @@
+import FAQSection from "./components/FAQSection";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import Introduction from "./components/Introduction";
@@ -12,6 +13,7 @@ export default function Home() {
       <WhatYouGet />
       <HowItWorks />
       <Metrics />
+      <FAQSection />
     </>
   );
 }
