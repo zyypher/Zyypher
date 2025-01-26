@@ -1,8 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ServicesHero = () => {
   const router = useRouter();
@@ -11,8 +15,53 @@ const ServicesHero = () => {
     router.push("/portfolio");
   };
 
+  useEffect(() => {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#services-hero",
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    timeline
+      .fromTo(
+        ".services-hero-heading",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
+      )
+      .fromTo(
+        ".services-hero-description",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, ease: "power4.out" },
+        "-=0.8"
+      )
+      .fromTo(
+        ".services-hero-button",
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 1, ease: "power4.out" },
+        "-=0.6"
+      )
+      .fromTo(
+        ".services-hero-clients",
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, duration: 1, ease: "power4.out" },
+        "-=0.8"
+      )
+      .fromTo(
+        ".services-hero-3d",
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 1, ease: "power4.out" },
+        "-=0.8"
+      );
+  }, []);
+
   return (
-    <section className="relative bg-black text-white py-16 px-4">
+    <section
+      id="services-hero"
+      className="relative bg-black text-white py-16 px-4"
+    >
       {/* Background */}
       <div className="absolute inset-0">
         <Image
@@ -27,7 +76,7 @@ const ServicesHero = () => {
         {/* Left Text Content */}
         <div className="w-full lg:w-1/2 space-y-6">
           {/* Clients Badge */}
-          <div className="flex items-center space-x-2 bg-black/70 px-4 py-2 rounded-full">
+          <div className="services-hero-clients flex items-center space-x-2 bg-black/70 px-4 py-2 rounded-full">
             <div className="flex -space-x-2">
               <Image
                 src="/images/services-1.avif"
@@ -55,7 +104,7 @@ const ServicesHero = () => {
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl lg:text-[62px] font-bold leading-[120%] tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34]">
+          <h1 className="services-hero-heading text-4xl lg:text-[62px] font-bold leading-[120%] tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34]">
             Power Your{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightGreen to-lightGreen/[0.8]">
               Success
@@ -67,7 +116,7 @@ const ServicesHero = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-gray-400 tracking-wide">
+          <p className="services-hero-description text-gray-400 tracking-wide">
             From captivating designs to cutting-edge development and impactful
             digital strategies, we empower your business to thrive, achieve
             growth, and leave a lasting impression.
@@ -76,14 +125,14 @@ const ServicesHero = () => {
           {/* CTA Button */}
           <button
             onClick={handleClick}
-            className="inline-block bg-lightGreen text-black font-medium rounded-full px-6 py-3 shadow hover:bg-lightGreenHover transition"
+            className="services-hero-button inline-block bg-lightGreen text-black font-medium rounded-full px-6 py-3 shadow hover:bg-lightGreenHover transition"
           >
             Explore Portfolio →
           </button>
         </div>
 
         {/* Right Section - Placeholder for 3D Object */}
-        <div className="w-full lg:w-1/2 h-[400px] flex items-center justify-center">
+        <div className="services-hero-3d w-full lg:w-1/2 h-[400px] flex items-center justify-center">
           <div className="border-dashed border-2 border-gray-400 w-full h-full rounded-lg flex items-center justify-center">
             <p className="text-gray-400 text-center">3D Object Coming Soon</p>
           </div>

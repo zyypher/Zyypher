@@ -1,7 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ServicesOverview = () => {
   const [showAll, setShowAll] = useState(false);
@@ -92,15 +96,54 @@ const ServicesOverview = () => {
       ],
     },
   ];
-  
 
   const visibleServices = showAll ? services : services.slice(0, 2);
 
+  useEffect(() => {
+    // GSAP Animation for Heading
+    gsap.fromTo(
+      ".services-heading",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#services-overview",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // GSAP Animation for Cards
+    gsap.fromTo(
+      ".service-card",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".services-cards",
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="bg-black text-white py-16 px-4">
+    <section
+      id="services-overview"
+      className="bg-black text-white py-16 px-4"
+    >
       <div className="max-w-5xl mx-auto text-center space-y-6">
         {/* Section Badge */}
-        <div className="inline-flex items-center bg-lightGreen px-4 py-1.5 rounded-full text-black text-sm font-medium">
+        <div className="inline-flex items-center bg-lightGreen px-4 py-1.5 rounded-full text-black text-sm font-medium services-heading">
           <Image
             src="/images/expertise5.svg"
             alt="Service Overview Icon"
@@ -112,12 +155,12 @@ const ServicesOverview = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34] text-4xl font-normal">
+        <h2 className="services-heading text-transparent bg-clip-text bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34] text-4xl font-normal">
           Our Services Overview
         </h2>
 
         {/* Subheading */}
-        <p className="text-gray-400 text-[19px] mt-2">
+        <p className="services-heading text-gray-400 text-[19px] mt-2">
           Explore our comprehensive services in digital marketing, web design
           and development, and branding & identity, tailored to elevate your
           online presence and brand identity.
@@ -125,11 +168,11 @@ const ServicesOverview = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="max-w-5xl mx-auto space-y-12 mt-12">
+      <div className="services-cards max-w-5xl mx-auto space-y-12 mt-12">
         {visibleServices.map((service, index) => (
           <div
             key={index}
-            className="rounded-lg p-6 shadow-lg border border-gray-700 flex flex-col lg:flex-row gap-6"
+            className="service-card rounded-lg p-6 shadow-lg border border-gray-700 flex flex-col lg:flex-row gap-6"
           >
             {/* Left Section */}
             <div className="lg:w-1/3 space-y-4 p-6 shadow-md border border-gray-600 relative bg-darkGray">
