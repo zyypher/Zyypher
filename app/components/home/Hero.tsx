@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import gsap from "gsap";
 import "./HeroSection.css";
 
 const HeroSection: React.FC = () => {
@@ -9,7 +10,16 @@ const HeroSection: React.FC = () => {
       "bubbleCanvas"
     ) as HTMLCanvasElement | null;
 
-    const container = document.querySelector(".bubble-container") as HTMLElement | null;
+    const container = document.querySelector(
+      ".bubble-container"
+    ) as HTMLElement | null;
+
+    // GSAP Animations for Hero Content
+    gsap.fromTo(
+      ".hero-content",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 3, ease: "power2.out", delay: 0.2 }
+    );
 
     if (canvas && container) {
       const ctx = canvas.getContext("2d");
@@ -48,7 +58,6 @@ const HeroSection: React.FC = () => {
       });
 
       for (let i = 0; i < 300; i++) {
-        // Increase the number of particles
         particles.push(createParticle(true)); // Start all particles inside the visible area
       }
 
@@ -90,7 +99,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="text-center max-w-4xl mx-auto px-4 relative z-10">
+      <div className="hero-content text-center max-w-4xl mx-auto px-4 relative z-10">
         <h1
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 framer-text"
           data-text-fill="true"

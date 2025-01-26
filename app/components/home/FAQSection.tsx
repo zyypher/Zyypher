@@ -1,10 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const contentRef = useRef<(HTMLDivElement | null)[]>([]);
+  const faqRef = useRef<HTMLDivElement | null>(null);
 
   const faqItems = [
     {
@@ -50,8 +55,49 @@ const Faq = () => {
     });
   }, [openIndex]);
 
+  useEffect(() => {
+    // Animate FAQ section when it comes into view
+    gsap.fromTo(
+      faqRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: faqRef.current,
+          start: "top 80%",
+          end: "bottom 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Animate each FAQ item
+    gsap.fromTo(
+      ".faq-item",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power4.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: faqRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="bg-black py-12 px-6">
+    <section
+      id="faq"
+      ref={faqRef}
+      className="bg-black py-12 px-6"
+    >
       {/* Heading */}
       <div className="text-center mb-8">
         <p
@@ -78,7 +124,7 @@ const Faq = () => {
       {/* Accordion */}
       <div className="max-w-4xl mx-auto">
         {faqItems.map((item, index) => (
-          <div key={index} className="mb-4">
+          <div key={index} className="faq-item mb-4">
             {/* Question */}
             <div
               className="flex justify-between items-center px-6 py-4 cursor-pointer"
@@ -116,7 +162,7 @@ const Faq = () => {
 
             {/* Answer */}
             <div
-              ref={el => {
+              ref={(el) => {
                 contentRef.current[index] = el;
               }}
               className="overflow-hidden transition-all duration-500 ease-in-out"

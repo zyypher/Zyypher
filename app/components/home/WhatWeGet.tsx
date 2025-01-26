@@ -1,9 +1,54 @@
+"use client";
+
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeatureSvg from "../images/FeatureSvg";
 import ScalableSvg from "../images/ScalableSvg";
 import TailorMade from "../images/TailorMade";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const WhatYouGet = () => {
+  useEffect(() => {
+    // Animate the heading and subheading
+    gsap.fromTo(
+      ".what-you-get-heading",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#what-you-get",
+          start: "top 80%",
+          end: "bottom 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Animate the feature cards
+    gsap.fromTo(
+      ".feature-card",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out",
+        stagger: 0.3, // Delay between each card
+        scrollTrigger: {
+          trigger: "#what-you-get",
+          start: "top 70%",
+          end: "bottom 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
     <section
       id="what-you-get"
@@ -11,10 +56,10 @@ const WhatYouGet = () => {
     >
       {/* Heading */}
       <div className="text-center mb-12">
-        <p className="uppercase tracking-wide font-semibold text-sm text-lightGreen">
+        <p className="what-you-get-heading uppercase tracking-wide font-semibold text-sm text-lightGreen">
           What you’ll get
         </p>
-        <h2 className="text-white text-3xl md:text-4xl mt-4 leading-tight font-light">
+        <h2 className="what-you-get-heading text-white text-3xl md:text-4xl mt-4 leading-tight font-light">
           We resolve problems associated with creative procedures.
         </h2>
       </div>
@@ -22,10 +67,8 @@ const WhatYouGet = () => {
       {/* Feature Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Feature 1 */}
-        <div className="flex flex-col items-center justify-end bg-gradient-to-b from-[#1e1e1e] to-[#141414] rounded-[30px] p-10 h-[420x] border border-[#1f1f1f]">
-          <div
-            className="w-[240px] h-[180px] flex justify-center items-center overflow-hidden"
-          >
+        <div className="feature-card flex flex-col items-center justify-end bg-gradient-to-b from-[#1e1e1e] to-[#141414] rounded-[30px] p-10 h-[420px] border border-[#1f1f1f]">
+          <div className="w-[240px] h-[180px] flex justify-center items-center overflow-hidden">
             <FeatureSvg />
           </div>
           <h3 className="text-gray-200 text-lg font-semibold mt-6">
@@ -37,11 +80,9 @@ const WhatYouGet = () => {
         </div>
 
         {/* Feature 2 */}
-        <div className="flex flex-col items-center justify-end bg-gradient-to-b from-[#1e1e1e] to-[#141414] rounded-[30px] p-10 h-[429px] border border-[#1f1f1f]">
-          <div
-            className="w-[240px] h-[180px] flex justify-center items-center overflow-hidden"
-          >
-           <TailorMade />
+        <div className="feature-card flex flex-col items-center justify-end bg-gradient-to-b from-[#1e1e1e] to-[#141414] rounded-[30px] p-10 h-[429px] border border-[#1f1f1f]">
+          <div className="w-[240px] h-[180px] flex justify-center items-center overflow-hidden">
+            <TailorMade />
           </div>
           <h3 className="text-gray-200 text-lg font-semibold mt-6">
             Tailor–made design
@@ -52,11 +93,9 @@ const WhatYouGet = () => {
         </div>
 
         {/* Feature 3 */}
-        <div className="flex flex-col items-center justify-end bg-gradient-to-b from-[#1e1e1e] to-[#141414] rounded-[30px] p-10 h-[429px] border border-[#1f1f1f]">
-          <div
-            className="w-[240px] h-[180px] flex justify-center items-center overflow-hidden"
-          >
-          <ScalableSvg />
+        <div className="feature-card flex flex-col items-center justify-end bg-gradient-to-b from-[#1e1e1e] to-[#141414] rounded-[30px] p-10 h-[429px] border border-[#1f1f1f]">
+          <div className="w-[240px] h-[180px] flex justify-center items-center overflow-hidden">
+            <ScalableSvg />
           </div>
           <h3 className="text-gray-200 text-lg font-semibold mt-6">
             Scalable as you grow
