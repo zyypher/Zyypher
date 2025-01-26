@@ -1,6 +1,7 @@
-import FeatureSvg from "./images/FeatureSvg";
-import ScalableSvg from "./images/ScalableSvg";
-import TailorMade from "./images/TailorMade";
+import FeatureSvg from "../images/FeatureSvg";
+import ScalableSvg from "../images/ScalableSvg";
+import TailorMade from "../images/TailorMade";
+
 
 const WhatYouGet = () => {
   return (

@@ -19,8 +19,15 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-md bg-[rgba(10,12,30,0.8)] border border-[rgba(19,24,57,0.8)] rounded-full px-6 py-3 flex items-center justify-between shadow-lg max-w-[800px] w-[90%]">
       {/* Logo Section */}
-      <Link href="/" className="text-white font-semibold text-lg">
-        ZYYPHER
+      <Link href="/" className="flex items-center space-x-2">
+        <Image
+          src="/images/mainLogo2.png" // Ensure this is a transparent logo with white content
+          width={40}
+          height={40}
+          alt="main-logo"
+          className="object-contain" // Ensures proper scaling
+        />
+        <span className="text-white font-semibold text-lg">ZYYPHER</span>
       </Link>
 
       {/* Hamburger Icon for Mobile */}
@@ -62,12 +69,13 @@ const Navbar = () => {
         <Link href="/about" className={getLinkClass("/about")}>
           About
         </Link>
-        <Link href="/portfolio" className={getLinkClass("/portfolio")}>
-          Portfolio
-        </Link>
         <Link href="/services" className={getLinkClass("/services")}>
           Services
         </Link>
+        <Link href="/portfolio" className={getLinkClass("/portfolio")}>
+          Portfolio
+        </Link>
+
         <Link
           href="/contact"
           className="px-4 py-2 rounded-full bg-[rgb(28,35,84)] text-[rgb(204,215,255)] text-[18px] font-medium shadow hover:bg-[rgba(38,115,204,0.18)] transition"
@@ -94,19 +102,20 @@ const Navbar = () => {
             About
           </Link>
           <Link
-            href="/portfolio"
-            className={getLinkClass("/portfolio")}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Portfolio
-          </Link>
-          <Link
             href="/services"
             className={getLinkClass("/services")}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Services
           </Link>
+          <Link
+            href="/portfolio"
+            className={getLinkClass("/portfolio")}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Portfolio
+          </Link>
+
           <Link
             href="/contact"
             className={getLinkClass("/contact")}

@@ -1,6 +1,7 @@
-import MagicIcon from "./images/MagicIcon";
-import SupportIcon from "./images/SupportIcon";
-import VisionIcon from "./images/VisionIcon";
+import MagicIcon from "../images/MagicIcon";
+import SupportIcon from "../images/SupportIcon";
+import VisionIcon from "../images/VisionIcon";
+
 
 const HowItWorks = () => {
     return (

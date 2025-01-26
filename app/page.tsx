@@ -1,9 +1,9 @@
-import FAQSection from "./components/FAQSection";
-import Hero from "./components/Hero";
-import HowItWorks from "./components/HowItWorks";
-import Introduction from "./components/Introduction";
-import Metrics from "./components/Metrics";
-import WhatYouGet from "./components/WhatWeGet";
+import FAQSection from "./components/home/FAQSection";
+import Hero from "./components/home/Hero";
+import HowItWorks from "./components/home/HowItWorks";
+import Introduction from "./components/home/Introduction";
+import Metrics from "./components/home/Metrics";
+import WhatYouGet from "./components/home/WhatWeGet";
 
 export default function Home() {
   return (
