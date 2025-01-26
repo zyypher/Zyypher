@@ -21,6 +21,7 @@ const config: Config = {
           "800": "#1F2937",
           "300": "#f2f2f3",
         },
+        darkGray: 'rgb(20,20,20)',
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
