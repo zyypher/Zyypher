@@ -13,7 +13,7 @@ const config: Config = {
         sans: ["Poppins", "sans-serif"],
       },
       colors: {
-        black: "#000",
+        black: "rgb(15, 15, 15);",
         white: "#fff",
         lightGreen: "#e2ff04",
         gray: {

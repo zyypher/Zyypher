@@ -35,7 +35,64 @@ const ServicesOverview = () => {
         { title: "Brand Guidelines", icon: "/images/expertise4.svg" },
       ],
     },
+    {
+      title: "Digital Marketing",
+      icon: "/images/expertise4.svg",
+      description:
+        "Boost your online presence and reach your audience with our comprehensive digital marketing services.",
+      subServices: [
+        { title: "SEO Optimization", icon: "/images/expertise2.svg" },
+        { title: "Content Marketing", icon: "/images/expertise3.svg" },
+        { title: "Social Media Marketing", icon: "/images/expertise4.svg" },
+        { title: "Email Campaigns", icon: "/images/expertise2.svg" },
+        { title: "Pay-Per-Click (PPC)", icon: "/images/expertise3.svg" },
+        { title: "Marketing Analytics", icon: "/images/expertise4.svg" },
+      ],
+    },
+    {
+      title: "3D & Visual Solutions",
+      icon: "/images/expertise2.svg",
+      description:
+        "Bring your ideas to life with our immersive 3D and visual solutions tailored to your needs.",
+      subServices: [
+        { title: "3D Modeling", icon: "/images/expertise2.svg" },
+        { title: "AR/VR Solutions", icon: "/images/expertise3.svg" },
+        { title: "VFX & Visual Effects", icon: "/images/expertise4.svg" },
+        { title: "3D Rendering", icon: "/images/expertise2.svg" },
+        { title: "Virtual Tours", icon: "/images/expertise3.svg" },
+        { title: "Simulation Design", icon: "/images/expertise4.svg" },
+      ],
+    },
+    {
+      title: "Video Production",
+      icon: "/images/expertise3.svg",
+      description:
+        "Engage your audience with high-quality video production and editing services.",
+      subServices: [
+        { title: "Video Editing", icon: "/images/expertise2.svg" },
+        { title: "Motion Graphics", icon: "/images/expertise3.svg" },
+        { title: "Animation Videos", icon: "/images/expertise4.svg" },
+        { title: "Promotional Videos", icon: "/images/expertise2.svg" },
+        { title: "Corporate Videos", icon: "/images/expertise3.svg" },
+        { title: "YouTube Video Editing", icon: "/images/expertise4.svg" },
+      ],
+    },
+    {
+      title: "App Development",
+      icon: "/images/expertise4.svg",
+      description:
+        "Develop powerful and user-friendly mobile and web applications tailored to your business.",
+      subServices: [
+        { title: "Mobile App Development", icon: "/images/expertise2.svg" },
+        { title: "Web App Development", icon: "/images/expertise3.svg" },
+        { title: "API Development", icon: "/images/expertise4.svg" },
+        { title: "Cross-Platform Apps", icon: "/images/expertise2.svg" },
+        { title: "Progressive Web Apps", icon: "/images/expertise3.svg" },
+        { title: "App Maintenance", icon: "/images/expertise4.svg" },
+      ],
+    },
   ];
+  
 
   const visibleServices = showAll ? services : services.slice(0, 2);
 
