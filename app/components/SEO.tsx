@@ -10,8 +10,6 @@ const SEO = ({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta property="og:image" content="https://www.zyypher.com/images/mainLogo3.png" />
-
 
       {/* Open Graph / Facebook */}
       <meta property="og:title" content={title} />
