@@ -2,30 +2,29 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image"; // For logo images
-import { usePathname } from "next/navigation"; // To detect the current path
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
 
   const getLinkClass = (route: string) =>
     `px-4 py-2 rounded-full ${
       pathname === route
-        ? "bg-[rgba(19,24,57)] border border-[rgba(22,28,68)] text-[var(--extracted-r6o4lv,var(--token-b29c03a1-9065-4901-9b4a-bc27ba796af3,rgb(240,241,244)))]"
-        : "bg-transparent text-[rgb(196,200,212)] hover:bg-[rgba(19,24,57)] hover:text-[var(--extracted-r6o4lv,var(--token-b29c03a1-9065-4901-9b4a-bc27ba796af3,rgb(240,241,244)))]"
+        ? "bg-[rgba(26,26,26,1)] border border-[rgba(38,38,38,1)] text-white"
+        : "bg-transparent text-gray-400 hover:bg-[rgba(26,26,26,1)] hover:text-white"
     } text-[18px] font-medium transition`;
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-md bg-[rgba(10,12,30,0.8)] border border-[rgba(19,24,57,0.8)] rounded-full px-6 py-3 flex items-center justify-between shadow-lg max-w-[800px] w-[90%]">
-      {/* Logo Section */}
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-[100px] bg-[rgba(15,15,15,0.65)] border border-[rgba(38,38,38,1)] rounded-full px-6 py-3 flex items-center justify-between shadow-lg max-w-[900px] w-[90%]">
       <Link href="/" className="flex items-center space-x-2">
         <Image
-          src="/images/mainLogo2.png" // Ensure this is a transparent logo with white content
+          src="/images/mainLogo3.png"
           width={40}
           height={40}
           alt="main-logo"
-          className="object-contain" // Ensures proper scaling
+          className="object-contain"
         />
         <span className="text-white font-semibold text-lg">ZYYPHER</span>
       </Link>
@@ -78,7 +77,7 @@ const Navbar = () => {
 
         <Link
           href="/contact"
-          className="px-4 py-2 rounded-full bg-[rgb(28,35,84)] text-[rgb(204,215,255)] text-[18px] font-medium shadow hover:bg-[rgba(38,115,204,0.18)] transition"
+          className="px-4 py-2 rounded-full bg-[rgb(205,241,64)] text-black text-[18px] font-medium shadow hover:bg-[rgb(184,226,52)] transition"
         >
           Contact Us
         </Link>
@@ -86,7 +85,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[60px] right-2 w-[85%] max-w-[300px] bg-[rgb(10,13,31)] rounded-lg shadow-lg border border-[rgb(19,24,57)] backdrop-blur-md p-4 flex flex-col space-y-4 md:hidden">
+        <div className="absolute top-[60px] right-2 w-[85%] max-w-[300px] bg-[rgba(15,15,15,0.9)] rounded-lg shadow-lg border border-[rgba(38,38,38,1)] backdrop-blur-[50px] p-4 flex flex-col space-y-4 md:hidden">
           <Link
             href="/"
             className={getLinkClass("/")}
@@ -118,7 +117,7 @@ const Navbar = () => {
 
           <Link
             href="/contact"
-            className={getLinkClass("/contact")}
+            className="px-4 py-2 rounded-full bg-[rgb(205,241,64)] text-black text-[18px] font-medium shadow hover:bg-[rgb(184,226,52)] transition"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us
