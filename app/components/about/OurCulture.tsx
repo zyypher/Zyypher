@@ -67,7 +67,7 @@ const OurCulture = () => {
         <span className="bg-darkGray text-lightGreen px-4 py-2 rounded-full text-sm font-semibold">
           Our Culture
         </span>
-        <h2 className="text-4xl font-bold mt-6">Our Culture, Empowering Excellence</h2>
+        <h2 className="text-4xl font-bold mt-6 white-gradient">Our Culture, Empowering Excellence</h2>
         <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
           Experience a culture that values innovation, collaboration, and diversity. We empower our team to excel, fostering a dynamic environment where creativity thrives.
         </p>

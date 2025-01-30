@@ -92,7 +92,7 @@ const TestimonialsSection = () => {
         <span className="bg-darkGray text-lightGreen px-4 py-2 rounded-full text-sm font-semibold inline-block">
           Testimonials
         </span>
-        <h2 className="text-4xl font-bold mt-4">What our Clients say About Us</h2>
+        <h2 className="text-4xl font-bold mt-4 white-gradient">What our Clients say About Us</h2>
         <p className="text-gray-400 mt-2 max-w-xl mx-auto">
           Read testimonials from satisfied clients, sharing their experiences and successes with our services and solutions.
         </p>
