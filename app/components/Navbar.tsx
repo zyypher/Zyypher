@@ -20,11 +20,11 @@ const Navbar = () => {
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-[100px] bg-[rgba(15,15,15,0.65)] border border-[rgba(38,38,38,1)] rounded-full px-6 py-3 flex items-center justify-between shadow-lg max-w-[900px] w-[90%]">
       <Link href="/" className="flex items-center space-x-2">
         <Image
-          src="/images/mainLogo3.png"
+          src="/images/mainLogo5.png"
           width={40}
           height={40}
           alt="main-logo"
-          className="object-contain"
+          className="object-contain "
         />
         <span className="text-white font-semibold text-lg">ZYYPHER</span>
       </Link>

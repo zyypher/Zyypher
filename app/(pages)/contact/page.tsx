@@ -13,7 +13,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="bg-black min-h-screen p-8 flex justify-center items-center">
+    <div className="bg-black min-h-screen p-8 flex justify-center items-center mt-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
         {/* Left Section: Contact Sales */}
         <div className="rounded-lg shadow-lg p-8 border border-gray-700">
@@ -117,6 +117,7 @@ const Contact = () => {
                 <option>VFX</option>
                 <option>Branding</option>
                 <option>Digital Marketing</option>
+                <option>Others</option>
               </select>
             </div>
             <div className="md:col-span-2">
