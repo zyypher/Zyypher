@@ -140,7 +140,7 @@ const ExpertiseSection = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="expertise-heading text-transparent bg-clip-text bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34] text-4xl font-normal">
+        <h2 className="expertise-heading white-gradient text-4xl font-normal">
           Our Range of Expertise
         </h2>
 

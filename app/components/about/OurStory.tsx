@@ -72,7 +72,7 @@ const OurStory = () => {
         <span className="bg-darkGray text-lightGreen px-4 py-1.5 rounded-full text-sm font-semibold inline-block">
           Our Story
         </span>
-        <h2 className="text-4xl font-bold mt-4">Over The Years</h2>
+        <h2 className="text-4xl font-bold mt-4 white-gradient">Over The Years</h2>
         <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
           Zyypher has evolved from a small, ambitious team to a globally
           recognized agency redefining digital experiences.

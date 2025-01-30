@@ -79,3 +79,7 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.white-gradient { 
+  @apply bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34] text-transparent bg-clip-text
+}
