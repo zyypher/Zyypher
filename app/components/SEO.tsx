@@ -4,7 +4,7 @@ const SEO = ({
   title = "Zyypher - Your Technology Partner",
   description = "Empowering businesses with top-notch technology solutions.",
   url = "https://www.zyypher.com/",
-  image = "https://www.zyypher.com/images/mainLogo3.png",
+  image = "https://www.zyypher.com/images/mainLogo5.png",
 }) => {
   return (
     <Head>
