@@ -1,6 +1,5 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,7 +12,7 @@ const config: Config = {
         sans: ["Poppins", "sans-serif"],
       },
       colors: {
-        black: "rgb(15, 15, 15);",
+        black: "rgb(15, 15, 15)",
         white: "#fff",
         lightGreen: "#e2ff04",
         gray: {
@@ -24,6 +23,7 @@ const config: Config = {
         darkGray: 'rgb(20,20,20)',
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        border: "hsl(var(--border))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -52,7 +52,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         chart: {
@@ -94,4 +93,3 @@ const config: Config = {
   },
   plugins: [require("tailwindcss-animate")],
 };
-export default config;
