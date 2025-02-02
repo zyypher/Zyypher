@@ -41,7 +41,7 @@ const Metrics = () => {
         {/* Metric 1 */}
         <div className="metric text-center">
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34] text-[65px] font-normal">
-            45+
+            5+
           </p>
           <p className="text-gray-400 text-[20px] mt-2">Happy customers</p>
         </div>
@@ -52,7 +52,7 @@ const Metrics = () => {
         {/* Metric 2 */}
         <div className="metric text-center">
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#fffff7] to-[#fffff7]/[0.34] text-[65px] font-normal">
-            5k+
+            200+
           </p>
           <p className="text-gray-400 text-[20px] mt-2">Hours spent on craft</p>
         </div>
