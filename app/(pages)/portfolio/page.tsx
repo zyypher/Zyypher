@@ -1,6 +1,8 @@
+import PortfolioShowcase from "@/app/components/portfolio/PortfolioShowcase";
+
 const Portfolio = () => {
-    return <div>Portfolio</div>;
+    return <div><PortfolioShowcase /></div>;
   };
   
   export default Portfolio;
-  
+   
