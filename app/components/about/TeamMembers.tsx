@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -36,7 +37,7 @@ const TeamMembers = () => {
         <span className="bg-darkGray text-lightGreen px-4 py-1.5 rounded-full text-sm font-semibold inline-block ">
           Team Members
         </span>
-        <h2 className=" mt-4  bg-clip-text white-gradient text-4xl font-normal">Awesome Team Members</h2>
+        <h2 className="mt-4 bg-clip-text white-gradient text-4xl font-normal">Awesome Team Members</h2>
         <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
           We are a dedicated group of individuals driven by our shared vision of making a real difference in the world.
         </p>
@@ -48,11 +49,13 @@ const TeamMembers = () => {
             key={index}
             className="team-card bg-gradient-to-b from-gray-900 to-black border border-gray-700 rounded-lg overflow-hidden shadow-lg"
           >
-            <div className="relative">
-              <img
+            <div className="relative w-full h-56">
+              <Image
                 src={member.image}
                 alt={member.name}
-                className="w-full h-56 object-cover"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t-lg"
               />
             </div>
             <div className="flex items-center justify-between p-4">
@@ -66,10 +69,11 @@ const TeamMembers = () => {
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-600"
               >
-                <img
+                <Image
                   src="/images/x-logo.svg"
                   alt="LinkedIn"
-                  className="w-4 h-4"
+                  width={16}
+                  height={16}
                 />
               </a>
             </div>

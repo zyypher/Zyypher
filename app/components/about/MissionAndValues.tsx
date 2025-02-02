@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,7 +82,7 @@ const MissionAndValues = () => {
             className="value-card bg-gradient-to-b from-gray-900 to-black border border-gray-700 rounded-lg p-6 text-center shadow-md"
           >
             <div className="flex justify-center mb-4">
-              <img src={value.icon} alt={value.title} className="w-12 h-12" />
+              <Image src={value.icon} alt={value.title} width={48} height={48} />
             </div>
             <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
             <p className="text-gray-400">{value.description}</p>
@@ -97,7 +98,7 @@ const MissionAndValues = () => {
             className="value-card bg-gradient-to-b from-gray-900 to-black border border-gray-700 rounded-lg p-6 text-center shadow-md"
           >
             <div className="flex justify-center mb-4">
-              <img src={value.icon} alt={value.title} className="w-12 h-12" />
+              <Image src={value.icon} alt={value.title} width={48} height={48} />
             </div>
             <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
             <p className="text-gray-400">{value.description}</p>

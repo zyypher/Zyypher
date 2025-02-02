@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 
 const culturePoints = [
   {
@@ -76,9 +77,11 @@ const OurCulture = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-start">
         {/* Image Section */}
         <div className="lg:col-span-1 rounded-lg overflow-hidden">
-          <img
+          <Image
             src="/images/about-image.avif"
             alt="Our Culture"
+            width={800}
+            height={600}
             className="w-full h-72 object-cover"
           />
         </div>
@@ -93,7 +96,7 @@ const OurCulture = () => {
                 pointsRef.current[index] = el;
               }}
             >
-              <img src={point.icon} alt={point.title} className="w-10 h-10" />
+              <Image src={point.icon} alt={point.title} width={40} height={40} className="w-10 h-10" />
               <div>
                 <h3 className="text-lg font-semibold">{point.title}</h3>
                 <p className="text-gray-400 mt-1">{point.description}</p>
