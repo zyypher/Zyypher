@@ -19,13 +19,13 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-[100px] bg-[rgba(15,15,15,0.65)] border border-[rgba(38,38,38,1)] rounded-full px-6 py-3 flex items-center justify-between shadow-lg max-w-[900px] w-[90%]">
       <Link href="/" className="flex items-center space-x-2">
-        <Image
+        {/* <Image
           src="/images/mainLogo5.png"
           width={40}
           height={40}
           alt="main-logo"
           className="object-contain "
-        />
+        /> */}
         <span className="text-white font-semibold text-lg">ZYYPHER</span>
       </Link>
 
@@ -71,9 +71,9 @@ const Navbar = () => {
         <Link href="/services" className={getLinkClass("/services")}>
           Services
         </Link>
-        <Link href="/portfolio" className={getLinkClass("/portfolio")}>
+        {/* <Link href="/portfolio" className={getLinkClass("/portfolio")}>
           Portfolio
-        </Link>
+        </Link> */}
 
         <Link
           href="/contact"

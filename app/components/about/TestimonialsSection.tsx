@@ -28,13 +28,21 @@ const testimonials = [
     role: "Marketing Manager, Abuhaliqa Abaya",
     image: "/images/shefeeq.jpg",
   },
+  // {
+  //   title: "Top-tier Web Solutions!",
+  //   feedback:
+  //     "JAS Advertising's new website has transformed how we connect with clients in Saudi Arabia. Highly satisfied with the service provided.",
+  //   name: "Anas",
+  //   role: "Director, JAS Advertising",
+  //   image: "/images/anas.jpg",
+  // },
   {
-    title: "Top-tier Web Solutions!",
-    feedback:
-      "JAS Advertising's new website has transformed how we connect with clients in Saudi Arabia. Highly satisfied with the service provided.",
-    name: "Anas",
-    role: "Director, JAS Advertising",
-    image: "/images/anas.jpg",
+    "title": "Exceptional Digital Solutions!",
+    "feedback":
+      "Zyypher has elevated our online presence with their cutting-edge web solutions. Their expertise and attention to detail exceeded our expectations!",
+    "name": "Rahul Mehta",
+    "role": "CEO, Mehta Tech Solutions",
+    "image": "/images/rahul.jpg"
   },
   {
     title: "Reliable Partner!",
@@ -59,7 +67,7 @@ const TestimonialsSection = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-    
+
     const cards = sectionRef.current.querySelectorAll(".testimonial-card");
 
     // Applying GSAP animation to each card

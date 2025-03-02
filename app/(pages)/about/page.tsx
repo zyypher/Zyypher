@@ -8,7 +8,7 @@ const About = () => {
   return <div>
     <OurStory />
     <MissionAndValues />
-    <TeamMembers />
+    {/* <TeamMembers /> */}
     <OurCulture />
     <TestimonialsSection />
   </div>;
